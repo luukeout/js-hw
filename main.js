@@ -157,10 +157,11 @@ var space = titles.join("");
 space = space.replace(/\s/g,'');
 // Removes all spaces in my string
 
-console.log(average(space.length,titles.length);
-	
+console.log(average(space.length,titles.length));
 // Divides the # of characters in my string by the number of titles of books.
 // Logs the average length of book title to the console
+
+
 
 // A little extra homework with .map(), .reduce(), and .forEach()
  
@@ -1211,14 +1212,30 @@ var items = [{
 }]
 
 
+items.forEach(function(string){
+	if (string.currency_code == "GBP"){
+		console.log(string.title + " costs £" + string.price);
+	}});
+
+var price = items.map(function(value){
+	return value.price;
+});
 
 
+var listSum = price.reduce(function(value1, value2){
+	return value1 + value2;
+});
 
+console.log("The average price is $" + average(listSum,price.length));
+// I could not figure out how to do this without variables
 
-
-
-
-
+items.forEach(function(object){
+	object.materials.forEach(function(material){
+		if (material == "wood") {
+			console.log(object.title + " is made of wood.");
+		}; 
+	});
+});
 
 
 
