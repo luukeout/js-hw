@@ -1237,7 +1237,36 @@ items.forEach(function(object){
 	});
 });
 
+// Figured out how to get the average without variables.
+console.log("The average price is $" + items.map(function(object){
+	return object.price;
+	}).reduce(function(a,b){
+		return a+b;
+			}) / items.length
+	);
 
+// I want to find which item is the cheapest.
+function sortDescending (a,b){
+	return b - a;
+};
+
+console.log(items.map(function(array){
+	return array.price;
+}).sort(sortDescending).pop());
+// It worked, which I"m pretty excited about, but not useful because I don't know
+// which item it is.
+
+// This gives me object title and price together in an array. Now I'd like to find
+// the cheapest one.
+console.log(items.map(function(object){
+	return object.title + " $" + object.price;
+	
+}));
+
+
+
+
+	
 
 
 
