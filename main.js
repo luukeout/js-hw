@@ -162,6 +162,16 @@ console.log(average(space.length,titles.length));
 // Logs the average length of book title to the console
 
 
+// I came back to this one because I realized I can do this better with .reduce.
+// console.log(books.map(function(string){
+// 	return string.title;
+// }).reduce(function(oneString){
+// 	return average(oneString, string.title.length);
+	
+// }));
+// Really not sure why this one isn't working.
+
+
 
 // A little extra homework with .map(), .reduce(), and .forEach()
  
@@ -1261,7 +1271,25 @@ console.log(items.map(function(array){
 console.log(items.map(function(object){
 	return object.title + " $" + object.price;
 	
-}));
+}).forEach(function(price){
+	if (price == "Libbey 2.5 oz. Shot Glass Multiple Etch Available Military Fire Harley HD IAFF Dept AXXHole $2.99") {
+		console.log(price + " is the cheapest.");
+		};
+	}
+));
+// The above worked. Obviously not ideal. It is also based on the fact that I already
+// knew which item was the cheapest. 
+
+// This is just because I'm curious if any of these are non-taxable
+items.forEach(function(object){
+	if (object.non_taxable == false){
+		console.log("Pay the man");
+	}
+		else {console.log(object.listing_id + "Tax free");
+	}
+});
+
+
 
 
 
